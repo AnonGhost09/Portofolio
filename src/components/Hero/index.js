@@ -4,7 +4,7 @@ import RightHero from "./RightHero";
 
 function index() {
   return (
-    <section id="home" className="pt-32">
+    <section id="home" className="pt-36">
       <div className="container">
         <div className="flex flex-wrap">
           <LeftHero />
