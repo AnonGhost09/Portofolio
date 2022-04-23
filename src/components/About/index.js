@@ -6,6 +6,7 @@ function index() {
       <div class="container">
         <p>tes</p>
         <p>tes</p>
+        <p>xxxxx</p>
       </div>
     </section>
   );
