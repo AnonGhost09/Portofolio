@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    font-family:'Inter', sans-serif;
+}
+
+@layer components {
+    .hamburger-menu{
+        @apply w-[30px] h-[2px] my-2 bg-dark block; 
+    }
+}
