@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Facebook, GitHub, Instagram, LinkedIn } from "../Icons";
 
-function index() {
+function Index() {
+  const tentangRef = useRef();
   return (
-    <section id="about" className="pb-32">
+    <section id="tentang" className="pb-32" ref={tentangRef}>
       <div className="container">
         <h4 className="font-bold uppercase text-primary text-lg mb-3">
           Tentang Saya
@@ -30,7 +31,7 @@ function index() {
               totam repellendus dignissimos ipsa quas placeat eaque error fugiat
               itaque est? Pariatur, autem?
             </p>
-            <div class="flex items-center">
+            <div className="flex items-center">
               <a
                 href="www.facebook.com"
                 className="w-12 h-12 mr-3 rounded-full border text-secondary border-slate-300 hover:text-white hover:bg-primary flex items-center justify-center"
@@ -63,4 +64,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

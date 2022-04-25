@@ -6,7 +6,7 @@ function LeftHero() {
     <div className="w-full self-center lg:w-1/2 ">
       <h1 className="text-base font-semibold text-primary md:text-xl">
         Hallo Friends, saya{" "}
-        <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl -ml-1">
+        <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl -ml-1">
           Pramudya Diva Alamsyah
         </span>
       </h1>
