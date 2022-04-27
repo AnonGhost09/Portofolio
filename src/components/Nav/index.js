@@ -1,13 +1,15 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
+import PositionContext from "../../context/PositionContext";
 import HamburgerButton from "../UI/HamburgerButton";
 import LinkNav from "./LinkNav";
 
 const navData = [
   { nama: "Home", link: "#home", isActive: false },
   { nama: "Tentang Saya", link: "#tentang", isActive: false },
-  { nama: "Portofolio", link: "#portofolio", isActive: false },
+  { nama: "Portfolio", link: "#portfolio", isActive: false },
   { nama: "Clients", link: "#clients", isActive: false },
-  { nama: "Blog", link: "#blog", isActive: false },
+  { nama: "Skill", link: "#skill", isActive: false },
+  { nama: "Testimoni", link: "#testimoni", isActive: false },
   { nama: "Contacts", link: "#contacts", isActive: false },
 ];
 
@@ -18,6 +20,7 @@ function Index() {
   const headerRef = useRef();
   const [hamburger, setHamburger] = useState(false);
   const [navActive, setNavActive] = useState(navData);
+  const { offset } = useContext(PositionContext);
 
   const hamburgerHandler = handler => {
     setHamburger(!handler);
@@ -28,20 +31,48 @@ function Index() {
       return prevState.map(item => {
         if (item.link === handler) {
           return { ...item, isActive: true };
-        } else {
-          return { ...item, isActive: false };
         }
+        return { ...item, isActive: false };
       });
     });
   };
 
+  let hash = window.location.hash;
+
   useEffect(() => {
+    switch (hash) {
+      case "#home":
+        window.scroll(0, -1);
+        break;
+      case "#tentang":
+        window.scroll(0, offset.tentang - 120);
+        break;
+      case "#skill":
+        window.scroll(0, offset.skill);
+        break;
+      case "#portfolio":
+        window.scroll(0, offset.portfolio);
+        break;
+      case "#clients":
+        window.scroll(0, offset.clients);
+        break;
+      case "#testimoni":
+        window.scroll(0, offset.testimoni);
+        break;
+      case "#contacts":
+        window.scroll(0, offset.contacts);
+        break;
+      default:
+        window.scroll(0, 0);
+        break;
+    }
+
     if (firstOpen) {
-      navHandler(window.location.hash);
+      navHandler(hash);
       firstOpen = false;
     }
     const cekHeader = () => {
-      if (window.scrollY > headerRef.current.offsetHeight) {
+      if (window.scrollY > headerRef.current.offsetHeight - 20) {
         headerRef.current.classList.add("navbar-fixed");
       } else if (window.scrollY === 0) {
         headerRef.current.classList.remove("navbar-fixed");
@@ -52,7 +83,7 @@ function Index() {
     return () => {
       window.removeEventListener("scroll", cekHeader);
     };
-  }, []);
+  }, [offset, hash]);
 
   let visibleNav = hamburger
     ? "-translate-y-0 opacity-100"
@@ -63,7 +94,7 @@ function Index() {
       className="bg-transparent sticky transitio-all duration-300 ease-in-out z-[9999]"
       ref={headerRef}
     >
-      <div className="container flex py-5 justify-between relative">
+      <div className="container flex py-1 justify-between relative">
         <span className="flex items-center">
           <a href="#home" className="font-semibold text-lg  text-primary">
             PramudyaLogo

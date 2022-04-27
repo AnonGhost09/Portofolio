@@ -1,10 +1,18 @@
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import PositionContext from "../../context/PositionContext";
 import { Facebook, GitHub, Instagram, LinkedIn } from "../Icons";
 
 function Index() {
   const tentangRef = useRef();
+  const context = useContext(PositionContext);
+  const { position, replaceOffset } = context;
+
+  useEffect(() => {
+    replaceOffset({ tentang: tentangRef.current.offsetTop });
+  }, [position.link, replaceOffset]);
+
   return (
-    <section id="tentang" className="pb-32" ref={tentangRef}>
+    <section id="tentang" ref={tentangRef} className="mb-56">
       <div className="container">
         <h4 className="font-bold uppercase text-primary text-lg mb-3">
           Tentang Saya
