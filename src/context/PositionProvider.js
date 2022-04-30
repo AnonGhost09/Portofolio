@@ -14,11 +14,12 @@ function PositionProvider({ children }) {
   const [navBar, setNavBar] = useState(navData);
   const [link, setLink] = useState("");
 
-  const handleActive = link => {
-    setLink(link);
+  const handleActive = bing => {
+    setLink(bing);
   };
 
   useEffect(() => {
+    setLink(window.location.hash);
     setNavBar(prevState => {
       return prevState.map(item => {
         return {
