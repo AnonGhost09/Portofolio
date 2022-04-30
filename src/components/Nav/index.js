@@ -21,26 +21,6 @@ function Index() {
       } else if (window.scrollY === 0) {
         headerRef.current.classList.remove("navbar-fixed");
       }
-
-      // handleActive("");
-
-      // if (window.scrollY >= 6299) {
-      //   handleActive("#contacts");
-      // } else if (window.scrollY >= 4949) {
-      //   handleActive("#testimoni");
-      // } else if (window.scrollY >= 4033) {
-      //   handleActive("#skill");
-      // } else if (window.scrollY >= 3519) {
-      //   handleActive("#clients");
-      // } else if (window.scrollY >= 1689) {
-      //   handleActive("#portfolio");
-      // } else if (window.scrollY >= 1065) {
-      //   handleActive("#tentang");
-      // } else if (window.scrollY >= 96) {
-      //   handleActive("#home");
-      // } else {
-      //   handleActive("");
-      // }
     };
 
     window.addEventListener("scroll", cekHeader);
@@ -55,25 +35,25 @@ function Index() {
 
   return (
     <header
-      className="bg-transparent sticky transitio-all duration-300 ease-in-out z-[9999] py-2"
+      className="transitio-all sticky z-[9999] bg-transparent py-2 duration-300 ease-in-out"
       ref={headerRef}
     >
-      <div className="container flex py-1 justify-between relative">
+      <div className="container relative flex justify-between py-1">
         <span className="flex items-center">
-          <a href="#home" className="font-semibold text-lg  text-primary">
+          <a href="#home" className="text-lg font-semibold  text-primary">
             PramudyaLogo
           </a>
         </span>
-        <div className="items-center flex">
+        <div className="flex items-center">
           <HamburgerButton
             hamburger={hamburger}
             hamburgerHandler={hamburgerHandler}
           />
           <nav
-            className={`absolute lg:static bg-white lg:bg-transparent w-full py-5 lg:py-0 lg:shadow-none lg:border-none max-w-[200px] ${visibleNav} rounded-lg top-24 right-0 shadow-md lg:max-w-full transition-all duration-200 ease-in-out border-2  border-secondary`}
+            className={`absolute w-full max-w-[200px] bg-white py-5 lg:static lg:border-none lg:bg-transparent lg:py-0 lg:shadow-none ${visibleNav} top-24 right-0 rounded-lg border-2 border-secondary shadow-md transition-all duration-200 ease-in-out  lg:max-w-full`}
           >
-            <span className="absolute lg:hidden border-2 border-secondary -top-4 right-5 border-t-white border-t-0 border-x-transparent border-x-[15px] border-b-[15px] "></span>
-            <ul className="lg:flex font-bold text-secondary">
+            <span className="absolute -top-4 right-5 border-2 border-x-[15px] border-t-0 border-b-[15px] border-secondary border-x-transparent border-t-white lg:hidden "></span>
+            <ul className="font-bold text-secondary lg:flex">
               {navbar.map((item, index) => {
                 return (
                   <LinkNav
