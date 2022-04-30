@@ -31,9 +31,14 @@ function Index() {
           <h1 className="font-bold text-xl mb-2">Tautan</h1>
           <ul className="grid gap-2 text-slate-300 text-md">
             <li>
-              <a href="#home" className="hover:text-slate-100">
+              <button
+                onClick={() => {
+                  window.location.hash = "#home";
+                }}
+                className="hover:text-slate-100"
+              >
                 Home
-              </a>
+              </button>
             </li>
             <li>
               <a href="#tentang" className="hover:text-slate-100">
