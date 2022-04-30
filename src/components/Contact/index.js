@@ -1,8 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import PositionContext from "../../context/PositionContext";
+import React, { useState } from "react";
 
 function Index() {
-  const contactRef = useRef();
   const [submit, setSubmit] = useState(false);
 
   const submitHandler = e => {
@@ -11,14 +9,8 @@ function Index() {
     setSubmit(true);
   };
 
-  const context = useContext(PositionContext);
-  const { position, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ contacts: contactRef.current.offsetTop });
-  }, [position.link, replaceOffset]);
   return (
-    <section id="contacts" ref={contactRef} className="pt-28 pb-20 bg-white">
+    <section id="contacts" className="pt-28 pb-20 bg-white">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center mb-16">

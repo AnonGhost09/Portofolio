@@ -1,22 +1,14 @@
-import React, { useContext, useEffect, useRef } from "react";
-import PositionContext from "../../context/PositionContext";
+import React, { useContext } from "react";
 import SocialContext from "../../context/SocialMediaContext";
 import { Facebook, GitHub, Instagram, LinkedIn } from "../Icons";
 import WrapSocial from "../UI/WrapSocial";
 
 function Index() {
-  const tentangRef = useRef();
-  const context = useContext(PositionContext);
   const { facebook, instagram, github, linkedin } =
     useContext(SocialContext).socialMedia;
-  const { position, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ tentang: tentangRef.current.offsetTop });
-  }, [position.link, replaceOffset]);
 
   return (
-    <section id="tentang" ref={tentangRef} className="mb-56">
+    <section id="tentang" className="pt-36 mb-56">
       <div className="container">
         <h4 className="font-bold uppercase text-primary text-lg mb-3">
           Tentang Saya

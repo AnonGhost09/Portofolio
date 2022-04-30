@@ -3,7 +3,7 @@ import Nav from "../Nav";
 
 function index({ children }) {
   return (
-    <div className="">
+    <div>
       <Nav />
       {children}
     </div>

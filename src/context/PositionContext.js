@@ -1,16 +1,13 @@
 import React from "react";
 
 const PositionContext = React.createContext({
-  position: {},
-  offset: {
-    home: null,
-    tentang: null,
-    portfolio: null,
-    clients: null,
-    skill: null,
-    contacts: null,
+  navBar: {
+    nama: "",
+    link: "",
+    isActive: false,
   },
-  replaceOffset: value => {},
+  isActive: false,
+  handleActive: () => {},
 });
 
 export default PositionContext;

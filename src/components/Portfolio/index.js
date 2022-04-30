@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import portfolio1 from "../../assets/images/portfolio1.png";
 import portfolio2 from "../../assets/images/SelamatUltah.png";
 import portfolio3 from "../../assets/images/kalkuDesign.png";
@@ -7,7 +7,6 @@ import portfolio5 from "../../assets/images/UniversitasKos.png";
 import portfolio6 from "../../assets/images/UiKomik.png";
 import portfolio7 from "../../assets/images/UiStore.png";
 
-import PositionContext from "../../context/PositionContext";
 import SpinnerLoading from "../UI/SpinnerLoading";
 import CardPortfolio from "./CardPortfolio";
 import WorkPortfolio from "./WorkPortfolio";
@@ -227,20 +226,8 @@ function Index() {
     );
   };
 
-  const portfolioRef = useRef();
-  const context = useContext(PositionContext);
-  const { position, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ portfolio: portfolioRef.current.offsetTop });
-  }, [position.link, replaceOffset]);
-
   return (
-    <section
-      id="portfolio"
-      ref={portfolioRef}
-      className="pt-28 pb-20 bg-slate-100"
-    >
+    <section id="portfolio" className="pt-28 pb-20 bg-slate-100">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center mb-16">

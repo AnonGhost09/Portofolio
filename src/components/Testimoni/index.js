@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import testi1 from "../../assets/images/atta.jpg";
 import testi2 from "../../assets/images/andika.jpeg";
 import testi3 from "../../assets/images/riaRicis.jpg";
-import PositionContext from "../../context/PositionContext";
 
 const data = [
   {
@@ -47,16 +46,8 @@ function Index() {
     setAnimation(false);
   };
 
-  const testimoniRef = useRef();
-  const context = useContext(PositionContext);
-  const { position: positionx, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ testimoni: testimoniRef.current.offsetTop });
-  }, [positionx.link, replaceOffset]);
-
   return (
-    <section id="testimoni" ref={testimoniRef} className=" bg-dark pt-28 pb-20">
+    <section id="testimoni" className=" bg-dark pt-28 pb-20">
       <div className="container">
         <div className="w-full">
           <div className="mx-auto text-center w-full">
