@@ -10,16 +10,16 @@ function LinkNav({ link, nama, isActive }) {
   };
   return (
     <li
-      className={`group cursor-pointer my-4  rounded ${
+      className={`group my-4 cursor-pointer rounded ${
         isActive ? "bg-primary" : "hover:bg-primary"
-      } transition-all duration-200 ease-in-out py-2`}
+      } hamburger py-2 transition-all duration-200 ease-in-out`}
     >
       <a
         href={link}
         onClick={clickMe}
-        className={`text-base ${
+        className={`hamburger text-base dark:text-white ${
           isActive ? "text-white" : "text-dark"
-        } py-2  px-4 xl:px-8  group-hover:text-white transition-all duration-200 ease-in-out`}
+        } py-2 px-4 transition-all duration-200 ease-in-out group-hover:text-white xl:px-8`}
       >
         {nama}
       </a>

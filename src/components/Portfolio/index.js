@@ -202,13 +202,13 @@ function Index() {
 
   const Limit = () => {
     return (
-      <div className="flex mt-36 mx-auto justify-center items-center">
+      <div className="mx-auto mt-36 flex items-center justify-center">
         {dataPortfolio.length === 0 ? (
-          <h1 className="text-white items-center font-thin text-lg bg-primary py-4 px-6 rounded-full">
+          <h1 className="items-center rounded-full bg-primary py-4 px-6 text-lg font-thin text-white">
             Data Portfolio Tidak Tersedia
           </h1>
         ) : limit >= dataPortfolio.length ? (
-          <h1 className="text-white items-center font-thin text-lg bg-primary py-4 px-6 rounded-full">
+          <h1 className="items-center rounded-full bg-primary py-4 px-6 text-lg font-thin text-white">
             Data Sudah Ditampilkan Semuanya
           </h1>
         ) : loading ? (
@@ -216,7 +216,7 @@ function Index() {
         ) : (
           <button
             type="button"
-            className="py-2.5 px-5 mr-2 text-lg text-white hover:bg-secondary bg-primary rounded-lg border border-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-secondary"
+            className="mr-2 rounded-lg border border-gray-200 bg-primary py-2.5 px-5 text-lg text-white hover:bg-secondary dark:border-gray-600 dark:bg-primary dark:text-white dark:hover:bg-secondary dark:hover:text-white"
             onClick={limitHandler}
           >
             Load More
@@ -227,22 +227,25 @@ function Index() {
   };
 
   return (
-    <section id="portfolio" className="pt-28 pb-20 bg-slate-100">
+    <section
+      id="portfolio"
+      className="bg-slate-100 pt-28 pb-20 transition-colors duration-1000 dark:bg-slate-800"
+    >
       <div className="container">
         <div className="w-full">
-          <div className="max-w-xl mx-auto text-center mb-16">
-            <h4 className="font-bold uppercase text-primary text-lg mb-3">
+          <div className="mx-auto mb-16 max-w-xl text-center">
+            <h4 className="mb-3 text-lg font-bold uppercase text-primary ">
               Portofolio
             </h4>
-            <h2 className="font-bold text-dark text-3xl mb-5 lg:4xl">
+            <h2 className="lg:4xl mb-5 text-3xl font-bold text-dark transition-colors duration-1000 dark:text-white">
               Project Terbaru
             </h2>
-            <p className="font-medium text-base text-secondary lg:text-lg">
+            <p className="text-base font-medium text-secondary lg:text-lg">
               Project - project terbaru yang saya kerjakan selama ini
               menggunakan berbagai bahasa pemrograman dan framework. silahkan
               dilihat dan dapat dijadikan referensi bagi yang baru belajar
             </p>
-            <div className="flex justify-center my-20 flex-wrap">
+            <div className="my-20 flex flex-wrap justify-center">
               {works.map((work, index) => {
                 return (
                   <WorkPortfolio
@@ -256,7 +259,7 @@ function Index() {
               })}
             </div>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid gap-8 lg:grid-cols-2">
             {dataPortfolio.slice(0, limit).map((item, index) => {
               return (
                 <CardPortfolio

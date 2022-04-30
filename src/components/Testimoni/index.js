@@ -47,54 +47,57 @@ function Index() {
   };
 
   return (
-    <section id="testimoni" className=" bg-dark pt-28 pb-20">
+    <section
+      id="testimoni"
+      className=" bg-dark pt-28 pb-20 transition-colors duration-1000 dark:bg-dark"
+    >
       <div className="container">
         <div className="w-full">
-          <div className="mx-auto text-center w-full">
-            <h4 className="font-bold uppercase text-primary text-lg mb-3">
+          <div className="mx-auto w-full text-center">
+            <h4 className="mb-3 text-lg font-bold uppercase text-primary">
               Testimoni
             </h4>
-            <h2 className="font-bold text-white text-3xl mb-5 lg:4xl">
+            <h2 className="lg:4xl mb-5 text-3xl font-bold text-white">
               Testimoni dari berbagai pengguna
             </h2>
-            <p className="font-medium text-base text-secondary lg:text-lg ">
+            <p className="text-base font-medium text-secondary lg:text-lg ">
               Tanggapan dari para pengguna dengan hasil yang memuaskan
             </p>
-            <div className="mt-20 justify-center flex gap-x-5">
+            <div className="mt-20 flex justify-center gap-x-5">
               {data.slice(position, position + 1).map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className={`w-full h-full pb-7 bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${
+                    className={`h-full w-full overflow-hidden rounded-lg bg-white pb-7 shadow-lg transition-all duration-300 dark:bg-dark ${
                       animation ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <img
                       src={item.image}
                       alt="testi"
-                      className="h-1/2 w-full object-cover"
+                      className="h-[500px] w-full object-cover"
                     />
-                    <h1 className="text-xl text-dark font-bold mt-4">
+                    <h1 className="mt-4 text-xl font-bold text-dark transition-colors duration-1000 dark:text-white">
                       {item.nama}
                     </h1>
-                    <i className="p-5 text-secondary block">
+                    <i className="block p-5 text-secondary">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                       Illum ducimus nihil neque, ratione quidem debitis nam quod
                       voluptatibus
                     </i>
-                    <button className="px-6 py-4 bg-primary text-white font-semibold rounded mt-3 hover:bg-secondary">
+                    <button className="mt-3 rounded bg-primary px-6 py-4 font-semibold text-white hover:bg-secondary">
                       Baca Selengkapnya
                     </button>
                   </div>
                 );
               })}
             </div>
-            <div className="flex justify-center mt-2 gap-x-1 overflow-hidden">
+            <div className="mt-2 flex justify-center gap-x-1 overflow-hidden">
               {data.map((item, index) => {
                 return (
                   <span
                     key={index}
-                    className={`w-[8px] h-[8px] bg-white inline-block rounded-full  ${
+                    className={`inline-block h-[8px] w-[8px] rounded-full bg-white  ${
                       index === position ? "opacity-100" : "opacity-50"
                     }`}
                   ></span>
@@ -103,13 +106,13 @@ function Index() {
             </div>
             <div className="mt-5 flex justify-center gap-x-10">
               <button
-                className="bg-white p-4 rounded-full w-10 h-10 flex items-center hover:bg-primary hover:text-white"
+                className="flex h-10 w-10 items-center rounded-full bg-white p-4 hover:bg-primary hover:text-white"
                 onClick={prev}
               >
                 ❮
               </button>
               <button
-                className="bg-white p-4 rounded-full w-10 h-10 flex items-center hover:bg-primary hover:text-white"
+                className="flex h-10 w-10 items-center rounded-full bg-white p-4 hover:bg-primary hover:text-white"
                 onClick={next}
               >
                 ❯

@@ -9,7 +9,7 @@ export const truncate = (str, n, link) => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-dark font-bold hover:text-primary cursor-pointer"
+              className="cursor-pointer font-bold text-dark transition-colors duration-1000 hover:text-primary dark:text-white"
             >
               Baca Selengkapnya...
             </a>
