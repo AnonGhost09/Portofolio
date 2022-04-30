@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./assets/css/index.css";
 import App from "./App";
 import PositionProvider from "./context/PositionProvider";
+import SocialMediaProvider from "./context/SocialMediaProvider";
 // import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <PositionProvider>
-      <App />
-    </PositionProvider>
+    <SocialMediaProvider>
+      <PositionProvider>
+        <App />
+      </PositionProvider>
+    </SocialMediaProvider>
   </React.StrictMode>
 );
 

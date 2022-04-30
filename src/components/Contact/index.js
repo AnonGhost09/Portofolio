@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import PositionContext from "../../context/PositionContext";
 
 function Index() {
   const contactRef = useRef();
@@ -9,8 +10,15 @@ function Index() {
 
     setSubmit(true);
   };
+
+  const context = useContext(PositionContext);
+  const { position, replaceOffset } = context;
+
+  useEffect(() => {
+    replaceOffset({ contacts: contactRef.current.offsetTop });
+  }, [position.link, replaceOffset]);
   return (
-    <section id="contact" ref={contactRef} className="pt-28 pb-20 bg-white">
+    <section id="contacts" ref={contactRef} className="pt-28 pb-20 bg-white">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center mb-16">
@@ -32,7 +40,7 @@ function Index() {
             </h1>
           ) : (
             <form className="lg:w-2/3 lg:mx-auto" onSubmit={submitHandler}>
-              <label for="nama" className="text-primary font-bold">
+              <label htmlFor="nama" className="text-primary font-bold">
                 Nama
               </label>
               <input
@@ -40,7 +48,7 @@ function Index() {
                 className="w-full bg-slate-300 outline-primary p-3 rounded-md mb-7"
                 placeholder="Masukan Nama"
               />
-              <label for="nama" className="text-primary font-bold">
+              <label htmlFor="nama" className="text-primary font-bold">
                 Email
               </label>
               <input
@@ -48,7 +56,7 @@ function Index() {
                 className="w-full bg-slate-300 outline-primary p-3 rounded-md mb-7"
                 placeholder="Masukan Email"
               />
-              <label for="nama" className="text-primary font-bold">
+              <label htmlFor="nama" className="text-primary font-bold">
                 Pesan
               </label>
               <textarea

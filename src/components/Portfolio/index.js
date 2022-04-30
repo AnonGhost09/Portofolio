@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import portfolio1 from "../../assets/images/portfolio1.png";
+import portfolio2 from "../../assets/images/SelamatUltah.png";
+import portfolio3 from "../../assets/images/kalkuDesign.png";
+import portfolio4 from "../../assets/images/myFirsPortfolio.png";
+import portfolio5 from "../../assets/images/UniversitasKos.png";
+import portfolio6 from "../../assets/images/UiKomik.png";
+import portfolio7 from "../../assets/images/UiStore.png";
+
 import PositionContext from "../../context/PositionContext";
 import SpinnerLoading from "../UI/SpinnerLoading";
 import CardPortfolio from "./CardPortfolio";
@@ -7,7 +14,7 @@ import WorkPortfolio from "./WorkPortfolio";
 
 const fakeDataPortfolio = [
   {
-    title: "Netflix Clone",
+    title: "Web Selamat Ulang Tahun",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -24,8 +31,8 @@ const fakeDataPortfolio = [
                 aperiam, commodi similique aspernatur ipsum officiis quae est
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
-    link: "https://facebook.com",
-    image: portfolio1,
+    link: "https://selamat-ulang-tahun-my-love.web.app/",
+    image: portfolio2,
     tag: [3, 1],
   },
   {
@@ -46,12 +53,12 @@ const fakeDataPortfolio = [
                 aperiam, commodi similique aspernatur ipsum officiis quae est
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
-    link: "https://facebook.com",
+    link: "https://netflix-clone-cfce8.firebaseapp.com/",
     image: portfolio1,
     tag: [3, 1],
   },
   {
-    title: "Netflix Clone",
+    title: "Design Kalkulator",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -69,11 +76,11 @@ const fakeDataPortfolio = [
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
     link: "https://facebook.com",
-    image: portfolio1,
+    image: portfolio3,
     tag: [3, 0],
   },
   {
-    title: "Netflix Clone",
+    title: "My First Portfolio",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -90,12 +97,12 @@ const fakeDataPortfolio = [
                 aperiam, commodi similique aspernatur ipsum officiis quae est
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
-    link: "https://facebook.com",
-    image: portfolio1,
+    link: "https://myfristportfolio.anonghost025.repl.co/",
+    image: portfolio4,
     tag: [3, 1],
   },
   {
-    title: "Netflix Clone",
+    title: "Design Store",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -113,11 +120,11 @@ const fakeDataPortfolio = [
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
     link: "https://facebook.com",
-    image: portfolio1,
+    image: portfolio7,
     tag: [3, 0],
   },
   {
-    title: "Netflix Clone",
+    title: "Universitas Kos",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -134,12 +141,12 @@ const fakeDataPortfolio = [
                 aperiam, commodi similique aspernatur ipsum officiis quae est
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
-    link: "https://facebook.com",
-    image: portfolio1,
+    link: "https://github.com/AnonGhost09/UnKos_Tugas_Akhir",
+    image: portfolio5,
     tag: [3, 1],
   },
   {
-    title: "Netflix Clone",
+    title: "Design Komik",
     deskripsi: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                 explicabo voluptatum officia assumenda cumque modi reprehenderit
                 exercitationem ducimus repellendus totam? Lorem ipsum, dolor sit
@@ -157,7 +164,7 @@ const fakeDataPortfolio = [
                 vero adipisci. Cum sed molestiae exercitationem aliquid, beatae
                 fuga!`,
     link: "https://facebook.com",
-    image: portfolio1,
+    image: portfolio6,
     tag: [3, 0],
   },
 ];
@@ -248,7 +255,7 @@ function Index() {
               menggunakan berbagai bahasa pemrograman dan framework. silahkan
               dilihat dan dapat dijadikan referensi bagi yang baru belajar
             </p>
-            <div className="flex justify-evenly my-20 flex-wrap">
+            <div className="flex justify-center my-20 flex-wrap">
               {works.map((work, index) => {
                 return (
                   <WorkPortfolio

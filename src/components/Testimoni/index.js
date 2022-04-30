@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from "react";
-import portfolio1 from "../../assets/images/portfolio1.png";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import testi1 from "../../assets/images/atta.jpg";
+import testi2 from "../../assets/images/andika.jpeg";
+import testi3 from "../../assets/images/riaRicis.jpg";
+import PositionContext from "../../context/PositionContext";
 
 const data = [
   {
-    image: portfolio1,
-    nama: "pramudya 1",
+    image: testi1,
+    nama: "Atta Geledeg",
   },
   {
-    image: portfolio1,
-    nama: "pramudya 2",
+    image: testi2,
+    nama: "Andhika Saskeh",
   },
   {
-    image: portfolio1,
-    nama: "pramudya 3",
+    image: testi3,
+    nama: "Ria Recheese",
   },
 ];
 function Index() {
   const [position, setPosition] = useState(0);
   const [animation, setAnimation] = useState(true);
-
-  useEffect(() => {}, [position]);
 
   const next = () => {
     setTimeout(() => {
@@ -46,8 +47,16 @@ function Index() {
     setAnimation(false);
   };
 
+  const testimoniRef = useRef();
+  const context = useContext(PositionContext);
+  const { position: positionx, replaceOffset } = context;
+
+  useEffect(() => {
+    replaceOffset({ testimoni: testimoniRef.current.offsetTop });
+  }, [positionx.link, replaceOffset]);
+
   return (
-    <section id="testimoni" className=" bg-dark pt-28 pb-20">
+    <section id="testimoni" ref={testimoniRef} className=" bg-dark pt-28 pb-20">
       <div className="container">
         <div className="w-full">
           <div className="mx-auto text-center w-full">
@@ -72,7 +81,7 @@ function Index() {
                     <img
                       src={item.image}
                       alt="testi"
-                      className="h-1/2 object-cover"
+                      className="h-1/2 w-full object-cover"
                     />
                     <h1 className="text-xl text-dark font-bold mt-4">
                       {item.nama}

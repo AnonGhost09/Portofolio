@@ -7,6 +7,7 @@ import Clients from "./components/Clients";
 import Skill from "./components/Skill";
 import Testimoni from "./components/Testimoni";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Skill />
       <Testimoni />
       <Contact />
+      <Footer />
     </Layout>
   );
 }

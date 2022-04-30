@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useRef } from "react";
 import PositionContext from "../../context/PositionContext";
+import SocialContext from "../../context/SocialMediaContext";
 import { Facebook, GitHub, Instagram, LinkedIn } from "../Icons";
+import WrapSocial from "../UI/WrapSocial";
 
 function Index() {
   const tentangRef = useRef();
   const context = useContext(PositionContext);
+  const { facebook, instagram, github, linkedin } =
+    useContext(SocialContext).socialMedia;
   const { position, replaceOffset } = context;
 
   useEffect(() => {
@@ -40,30 +44,18 @@ function Index() {
               itaque est? Pariatur, autem?
             </p>
             <div className="flex items-center">
-              <a
-                href="www.facebook.com"
-                className="w-12 h-12 mr-3 rounded-full border text-secondary border-slate-300 hover:text-white hover:bg-primary flex items-center justify-center"
-              >
+              <WrapSocial link={instagram}>
                 <Instagram />
-              </a>
-              <a
-                href="www.facebook.com"
-                className="w-12 h-12 mr-3 rounded-full border text-secondary border-slate-300 hover:text-white hover:bg-primary flex items-center justify-center"
-              >
+              </WrapSocial>
+              <WrapSocial link={facebook}>
                 <Facebook />
-              </a>
-              <a
-                href="www.facebook.com"
-                className="w-12 h-12 mr-3 rounded-full border text-secondary border-slate-300 hover:text-white hover:bg-primary flex items-center justify-center"
-              >
-                <LinkedIn />
-              </a>
-              <a
-                href="www.facebook.com"
-                className="w-12 h-12 mr-3 rounded-full border text-secondary border-slate-300 hover:text-white hover:bg-primary flex items-center justify-center"
-              >
+              </WrapSocial>
+              <WrapSocial link={github}>
                 <GitHub />
-              </a>
+              </WrapSocial>
+              <WrapSocial link={linkedin}>
+                <LinkedIn />
+              </WrapSocial>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ function WorkPortfolio({ number, filter, name, onClick }) {
         filter === number
           ? `bg-primary text-white`
           : `bg-white text-dark shadow `
-      } px-4 py-2 rounded-lg hover:bg-primary hover:text-white`}
+      } px-4 py-2 rounded-lg hover:bg-primary hover:text-white mx-2`}
       onClick={onClick}
     >
       {name}

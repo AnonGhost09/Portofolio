@@ -35,7 +35,7 @@ function Index() {
   }, [position.link, replaceOffset]);
 
   return (
-    <section id="clients" ref={clientsRef} className="bg-dark pt-28 pb-20">
+    <section id="clients" ref={clientsRef} className="bg-dark pt-36 pb-20">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center">
