@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
-import PositionContext from "../../context/PositionContext";
+import React from "react";
 import react from "../../assets/images/react.png";
 import js from "../../assets/images/js.png";
 import next from "../../assets/images/next.png";
@@ -15,16 +14,8 @@ import mysql from "../../assets/images/mysql.png";
 import bootstrap from "../../assets/images/bootstrap.png";
 
 function Index() {
-  const skillRef = useRef();
-  const context = useContext(PositionContext);
-  const { position, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ skill: skillRef.current.offsetTop });
-  }, [position.link, replaceOffset]);
-
   return (
-    <section id="skill" ref={skillRef} className="bg-slate-100 pt-28 pb-20">
+    <section id="skill" className="bg-slate-100 pt-28 pb-20">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center">

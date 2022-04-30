@@ -1,31 +1,37 @@
-import React, { useCallback, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PositionContext from "./PositionContext";
 
-const initialOffset = {
-  home: null,
-  tentang: null,
-  portfolio: null,
-  clients: null,
-  skill: null,
-  contacts: null,
-};
-
+const navData = [
+  { nama: "Home", link: "#home", isActive: false },
+  { nama: "Tentang Saya", link: "#tentang", isActive: false },
+  { nama: "Portfolio", link: "#portfolio", isActive: false },
+  { nama: "Clients", link: "#clients", isActive: false },
+  { nama: "Skill", link: "#skill", isActive: false },
+  { nama: "Testimoni", link: "#testimoni", isActive: false },
+  { nama: "Contacts", link: "#contacts", isActive: false },
+];
 function PositionProvider({ children }) {
-  const [position] = useState({
-    link: window.location.hash || false,
-  });
-  const [offset, setOffset] = useState(initialOffset);
+  const [navBar, setNavBar] = useState(navData);
+  const [link, setLink] = useState("");
 
-  const replaceOffset = useCallback(value => {
-    setOffset(prevState => {
-      return { ...prevState, ...value };
+  const handleActive = link => {
+    setLink(link);
+  };
+
+  useEffect(() => {
+    setNavBar(prevState => {
+      return prevState.map(item => {
+        return {
+          ...item,
+          isActive: item.link === link,
+        };
+      });
     });
-  }, []);
+  }, [link]);
 
   const positionValue = {
-    position,
-    offset,
-    replaceOffset,
+    navBar,
+    handleActive,
   };
   return (
     <PositionContext.Provider value={positionValue}>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PositionContext from "../../context/PositionContext";
 import SocialMediaContext from "../../context/SocialMediaContext";
 import { Instagram, Facebook, GitHub, LinkedIn } from "../Icons";
 import WrapSocial from "../UI/WrapSocial";
@@ -6,6 +7,11 @@ import WrapSocial from "../UI/WrapSocial";
 function Index() {
   const context = useContext(SocialMediaContext);
   const { instagram, facebook, github, linkedin } = context.socialMedia;
+  const { handleActive } = useContext(PositionContext);
+
+  const toScroll = e => {
+    handleActive(e.target.hash);
+  };
   return (
     <footer id="footer" className="bg-dark text-white pb-10 pt-28 ">
       <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center gap-y-20  border-b border-slate-700 pb-20">
@@ -31,37 +37,65 @@ function Index() {
           <h1 className="font-bold text-xl mb-2">Tautan</h1>
           <ul className="grid gap-2 text-slate-300 text-md">
             <li>
-              <a href="#home" className="hover:text-slate-100">
+              <a
+                href="#home"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="#tentang" className="hover:text-slate-100">
+              <a
+                href="#tentang"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Tentang Saya{" "}
               </a>
             </li>
             <li>
-              <a href="#portfolio" className="hover:text-slate-100">
+              <a
+                href="#portfolio"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Portfolio{" "}
               </a>
             </li>
             <li>
-              <a href="#clients" className="hover:text-slate-100">
+              <a
+                href="#clients"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Clients{" "}
               </a>
             </li>
             <li>
-              <a href="#skill" className="hover:text-slate-100">
+              <a
+                href="#skill"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Skill{" "}
               </a>
             </li>
             <li>
-              <a href="#testimoni" className="hover:text-slate-100">
+              <a
+                href="#testimoni"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Testimoni{" "}
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-slate-100">
+              <a
+                href="#contacts"
+                onClick={toScroll}
+                className="hover:text-slate-100"
+              >
                 Contacts
               </a>
             </li>

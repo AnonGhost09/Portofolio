@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React from "react";
 import logoBukalapak from "../../assets/images/logo-bukalapak.png";
 import logoGojek from "../../assets/images/logo-gojek.png";
 import logoGoogle from "../../assets/images/logo-google.png";
 import logoShopee from "../../assets/images/logo-shopee.png";
-import PositionContext from "../../context/PositionContext";
+
 import LogoClients from "./LogoClients";
 
 let logos = [
@@ -26,16 +26,8 @@ let logos = [
 ];
 
 function Index() {
-  const clientsRef = useRef();
-  const context = useContext(PositionContext);
-  const { position, replaceOffset } = context;
-
-  useEffect(() => {
-    replaceOffset({ clients: clientsRef.current.offsetTop });
-  }, [position.link, replaceOffset]);
-
   return (
-    <section id="clients" ref={clientsRef} className="bg-dark pt-36 pb-20">
+    <section id="clients" className="bg-dark pt-36 pb-20">
       <div className="container">
         <div className="w-full">
           <div className="max-w-xl mx-auto text-center">
