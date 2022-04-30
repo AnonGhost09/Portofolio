@@ -5,13 +5,13 @@ import pramudya from "../..//assets/images/pramudya.png";
 function RightHero() {
   return (
     <div className="w-full self-end lg:w-1/2">
-      <div className="mt-10 relative lg:mt-0 lg:right-0">
+      <div className="relative mt-10 lg:right-0 lg:mt-0">
         <img
           src={pramudya}
           alt="orang ganteng pramudya diva alamsyah"
-          className="w-full mx-auto lg:ml-auto -translate-y-28 rounded-lg"
+          className="relative z-10 mx-auto w-full -translate-y-28 rounded-lg lg:ml-auto"
         />
-        <span className="absolute top-14 -z-10 left-1/3 -translate-x-1/4 md:scale-125">
+        <span className="absolute top-14 left-1/3 -translate-x-1/4 md:scale-125">
           <Blob width={400} height={400} />
         </span>
       </div>

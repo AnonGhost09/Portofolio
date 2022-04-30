@@ -4,11 +4,11 @@ function SpinnerLoading() {
   return (
     <span
       disabled
-      className="py-2.5 px-5 mr-2 text-lg text-white bg-primary rounded-lg border border-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      className="mr-2 rounded-lg border border-gray-200 bg-primary py-2.5 px-5 text-lg text-white dark:border-gray-600 dark:bg-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
     >
       <svg
         role="status"
-        className="inline w-4 h-4 mr-2 text-gray-200 animate-spin dark:text-gray-600"
+        className="mr-2 inline h-4 w-4 animate-spin text-gray-200 dark:text-gray-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
