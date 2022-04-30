@@ -78,7 +78,7 @@ function Index() {
               hamburgerHandler={hamburgerHandler}
             />
             <nav
-              className={`hamburger absolute w-full max-w-[200px] bg-white py-5 dark:bg-dark lg:static lg:border-none lg:bg-transparent lg:py-0 lg:shadow-none ${visibleNav} top-24 right-0 rounded-lg border-2 border-secondary shadow-md transition-all duration-1000 ease-in-out dark:shadow-slate-500 lg:max-w-full lg:dark:bg-transparent`}
+              className={`hamburger absolute w-full max-w-[200px] bg-white py-5 dark:bg-dark lg:static lg:border-none lg:bg-transparent lg:py-0 lg:shadow-none ${visibleNav} visible top-24 right-0 rounded-lg border-2 border-secondary shadow-md  dark:shadow-slate-500 lg:max-w-full lg:dark:bg-transparent`}
             >
               <span className="hamburger absolute -top-4 right-5 border-2 border-x-[15px] border-t-0 border-b-[15px] border-secondary border-x-transparent border-t-white lg:hidden "></span>
               <ul className="hamburger font-bold text-secondary lg:flex lg:items-center">
